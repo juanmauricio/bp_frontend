@@ -1,1 +1,1 @@
-var a=1,b=2;
+"use strict";var app=angular.module("app",[]);app.controller("main",["$scope",function($scope){}]);var b=2;
