@@ -211,7 +211,7 @@ function init() {
 
     // cubes
     cubeGeo = new THREE.BoxBufferGeometry(cubeSize.x, cubeSize.y, cubeSize.z);
-    cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xfeb74c, map: new THREE.TextureLoader().load('assets/js/editor/textures/square-outline-textured.png') });
+    cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xfeb74c, map: new THREE.TextureLoader().load('./3d-editor/textures/square-outline-textured.png') });
 
     // grid
     var gridHelper = new THREE.GridHelper(1000, 10);
@@ -248,7 +248,7 @@ function init() {
 
     // var verticalPartMesh = new THREE.Mesh(partGeo, partMaterial);
 
-    var yellowTexture = new THREE.TextureLoader().load("assets/js/editor/textures/yellow.png");
+    var yellowTexture = new THREE.TextureLoader().load("./3d-editor/textures/yellow.png");
     var mtrlyellowTexture = new THREE.MeshLambertMaterial({ map: yellowTexture });
     var yellowMesh = new THREE.Mesh(partGeo, mtrlyellowTexture);
     yellowMesh.position.x = xInitialVoxel + (cubeSize.x / 2);
@@ -266,7 +266,7 @@ function init() {
     //         0x4EF9EE
     // });
 
-    var blueTexture = new THREE.TextureLoader().load("assets/js/editor/textures/azul_claro.png");
+    var blueTexture = new THREE.TextureLoader().load("3d-editor/textures/azul_claro.png");
     var mtrlblueTexture = new THREE.MeshLambertMaterial({ map: blueTexture });
     var meshLeftblueTexture = new THREE.Mesh(partGeo, mtrlblueTexture);
 
@@ -281,7 +281,7 @@ function init() {
 
     //TOP HORIZONTAL INITIAL GEOMETRY.
     partHorTopGeo = new THREE.BoxBufferGeometry(partSizeHor.x, partSizeHor.y, partSizeHor.z);
-    var redTexture = new THREE.TextureLoader().load("assets/js/editor/textures/red.png");
+    var redTexture = new THREE.TextureLoader().load("3d-editor/textures/red.png");
     var mtrlredTexture = new THREE.MeshLambertMaterial({ map: redTexture });
     var horizontalTopPartMesh = new THREE.Mesh(partHorTopGeo, mtrlredTexture);
     horizontalTopPartMesh.position.x = xInitialVoxel;
@@ -294,7 +294,7 @@ function init() {
 
     //BOTTOM HORIZONTAL INITIAL GEOMETRY
     partHorBottomGeo = new THREE.BoxBufferGeometry(partSizeHor.x, partSizeHor.y, partSizeHor.z);
-    var whiteTexture = new THREE.TextureLoader().load("assets/js/editor/textures/white.png");
+    var whiteTexture = new THREE.TextureLoader().load("3d-editor/textures/white.png");
     var mtrlWhiteTexture = new THREE.MeshLambertMaterial({ map: whiteTexture });
     var meshBottomWhiteTexture = new THREE.Mesh(partHorBottomGeo, mtrlWhiteTexture);
     meshBottomWhiteTexture.position.x = xInitialVoxel;
@@ -535,7 +535,7 @@ function createLeftPart(left) {
     //         0xB2B4B7
     // });
 
-    var defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/grey.png");
+    var defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/grey.png");
     var mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
 
     var newLeftMesh = new THREE.Mesh(partGeo, mtrldefaultTexture);
@@ -553,7 +553,7 @@ function createTopPart(top) {
     //     color:
     //         0xB2B4B7
     // });
-    var defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/grey.png");
+    var defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/grey.png");
     var mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
     var newTopMesh = new THREE.Mesh(partHorTopGeo, mtrldefaultTexture);
     newTopMesh.position.x = top.x;
@@ -566,7 +566,7 @@ function createTopPart(top) {
 }
 
 function createRightPart(right) {
-    var defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/grey.png");
+    var defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/grey.png");
     var mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
     var newRightMesh = new THREE.Mesh(partGeo, mtrldefaultTexture);
     newRightMesh.position.x = right.x;
@@ -579,7 +579,7 @@ function createRightPart(right) {
 }
 
 function createBottomPart(bottom) {
-    var defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/grey.png");
+    var defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/grey.png");
     var mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
     var newBottomMesh = new THREE.Mesh(partHorBottomGeo, mtrldefaultTexture);
     newBottomMesh.position.x = bottom.x;
@@ -632,7 +632,7 @@ function buildColorSelector() {
 function buildColorChooserMenu() {
     var menuGeometry = new THREE.BoxBufferGeometry(50, 50, 10);
 
-    var whiteTexture = new THREE.TextureLoader().load("assets/js/editor/textures/white.png");
+    var whiteTexture = new THREE.TextureLoader().load("3d-editor/textures/white.png");
     var mtrlWhiteTexture = new THREE.MeshBasicMaterial({ map: whiteTexture });
     var meshWhiteTexture = new THREE.Mesh(menuGeometry, mtrlWhiteTexture);
     meshWhiteTexture.name = "whiteMenu";
@@ -642,7 +642,7 @@ function buildColorChooserMenu() {
     objects.push(meshWhiteTexture);
 
     //ROJO
-    var redTexture = new THREE.TextureLoader().load("assets/js/editor/textures/red.png");
+    var redTexture = new THREE.TextureLoader().load("3d-editor/textures/red.png");
     var mtrlredTexture = new THREE.MeshBasicMaterial({ map: redTexture });
     var redMesh = new THREE.Mesh(menuGeometry, mtrlredTexture);
     redMesh.name = "redMenu";
@@ -655,7 +655,7 @@ function buildColorChooserMenu() {
     // var mtrlPurpleColor = new THREE.MeshLambertMaterial({
     //     color: 0xF669F2
     // });
-    var blackTexture = new THREE.TextureLoader().load("assets/js/editor/textures/black.png");
+    var blackTexture = new THREE.TextureLoader().load("3d-editor/textures/black.png");
     var mtrlblackTexture = new THREE.MeshBasicMaterial({ map: blackTexture });
     var blackMesh = new THREE.Mesh(menuGeometry, mtrlblackTexture);
     blackMesh.name = "blackMenu";
@@ -669,7 +669,7 @@ function buildColorChooserMenu() {
     //     color: 0xE8F044
     // });
 
-    var yellowTexture = new THREE.TextureLoader().load("assets/js/editor/textures/yellow.png");
+    var yellowTexture = new THREE.TextureLoader().load("3d-editor/textures/yellow.png");
     var mtrlyellowTexture = new THREE.MeshBasicMaterial({ map: yellowTexture });
     var yellowMesh = new THREE.Mesh(menuGeometry, mtrlyellowTexture);
     yellowMesh.name = "yellowMenu";
@@ -678,7 +678,7 @@ function buildColorChooserMenu() {
     yellowMesh.userData = { type: "colorMenu" };
     objects.push(yellowMesh);
 
-    var blueTexture = new THREE.TextureLoader().load("assets/js/editor/textures/azul_claro.png");
+    var blueTexture = new THREE.TextureLoader().load("3d-editor/textures/azul_claro.png");
     var mtrlblueTexture = new THREE.MeshBasicMaterial({ map: blueTexture });
     var meshblueTexture = new THREE.Mesh(menuGeometry, mtrlblueTexture);
     meshblueTexture.name = "blueMenu";
@@ -687,7 +687,7 @@ function buildColorChooserMenu() {
     meshblueTexture.userData = { type: "colorMenu" };
     objects.push(meshblueTexture);
 
-    var texture1 = new THREE.TextureLoader().load("assets/js/editor/textures/brown_wood.png");
+    var texture1 = new THREE.TextureLoader().load("3d-editor/textures/brown_wood.png");
     var mtrlTexture1 = new THREE.MeshBasicMaterial({ map: texture1 });
     var texture1Mesh = new THREE.Mesh(menuGeometry, mtrlTexture1);
     texture1Mesh.name = "brownWoodMenu";
@@ -696,7 +696,7 @@ function buildColorChooserMenu() {
     texture1Mesh.userData = { type: "colorMenu" };
     objects.push(texture1Mesh);
 
-    var texture2 = new THREE.TextureLoader().load("assets/js/editor/textures/light_brown_wood.png");
+    var texture2 = new THREE.TextureLoader().load("3d-editor/textures/light_brown_wood.png");
     var mtrlTexture2 = new THREE.MeshBasicMaterial({ map: texture2 });
     var texture2Mesh = new THREE.Mesh(menuGeometry, mtrlTexture2);
     texture2Mesh.name = "lightBrownWood";
@@ -705,7 +705,7 @@ function buildColorChooserMenu() {
     texture2Mesh.userData = { type: "colorMenu" };
     objects.push(texture2Mesh);
 
-    var textureGreyWood = new THREE.TextureLoader().load("assets/js/editor/textures/grey_wood.png");
+    var textureGreyWood = new THREE.TextureLoader().load("3d-editor/textures/grey_wood.png");
     var mtrlGreyWood = new THREE.MeshBasicMaterial({ map: textureGreyWood });
     var meshGreyWood = new THREE.Mesh(menuGeometry, mtrlGreyWood);
     meshGreyWood.name = "meshGreyWood";
@@ -817,19 +817,19 @@ function onDocumentMouseDown(event) {
             var mtrldefaultTexture;
             switch (intersect.object.name) {
                 case "whiteMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/white.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/white.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "blackMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/black.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/black.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "redMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/red.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/red.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
@@ -838,31 +838,31 @@ function onDocumentMouseDown(event) {
                     selectedPart.material.color.set(purpleColor);
                     break;
                 case "yellowMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/yellow.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/yellow.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "blueMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/azul_claro.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/azul_claro.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "brownWoodMenu":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/brown_wood.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/brown_wood.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "lightBrownWood":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/light_brown_wood.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/light_brown_wood.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();
                     break;
                 case "meshGreyWood":
-                    defaultTexture = new THREE.TextureLoader().load("assets/js/editor/textures/grey_wood.png");
+                    defaultTexture = new THREE.TextureLoader().load("3d-editor/textures/grey_wood.png");
                     mtrldefaultTexture = new THREE.MeshLambertMaterial({ map: defaultTexture });
                     selectedPart.material = mtrldefaultTexture;
                     // selectedPart.material.map.set();

@@ -57,8 +57,13 @@ module.exports = function(grunt) {
 				},
 			},
 		},
-
-		// Task configuration will be written here
+		copy: {
+			main: {
+				expand: true,
+				src: 'src/3d-editor/**/*',
+				dest: 'dist/'
+			}
+		}
 	});
 
 	// Loading of tasks and registering tasks will be written here
@@ -67,11 +72,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-html2js');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-babel');
-	
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	//load custom tasks
 	grunt.loadTasks('tasks');
 
 	//set up the workflow.
-	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js' ]);
+	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js', 'copy' ]);
 };
