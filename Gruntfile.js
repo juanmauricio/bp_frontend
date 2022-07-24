@@ -67,10 +67,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-html2js');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-babel');
+	
 
 	//load custom tasks
 	grunt.loadTasks('tasks');
 
 	//set up the workflow.
-	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage' ]);
+	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js' ]);
 };
