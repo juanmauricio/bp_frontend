@@ -7,13 +7,28 @@
     <title>Document</title>
     <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="app.css">
+    <script type="text/javascript" src="./3d-editor/three.min.js"></script>
+    <script type="text/javascript" src="./3d-editor/OrbitControls.js"></script>
+    <script type="text/javascript" src="./3d-editor/Detector.js"></script>
+    <script type="text/javascript" src="./3d-editor/OrbitControls.js"></script>
+
+    <script type="text/javascript" src="./3d-editor/bpeditor.js"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- <script src="app.js"></script> -->
+    <!-- <link rel="stylesheet" href="app.css"> -->
 </head>
 
 <body ng-app="app">
-    <p>Name : <input type="text" ng-model="name"></p>
+    <p class="name">Name : <input type="text" ng-model="name"></p>
     <h1>Hello {{name}}</h1>
+    <div id="editorContainer" style="max-width: 650px;">
+    </div>
+    <script type="text/javascript">
+        startDFEditor();
+    </script>
+
 </body>
 
 </html>

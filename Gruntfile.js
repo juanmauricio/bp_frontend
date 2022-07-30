@@ -15,11 +15,11 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				src: [ 'src/js/**/*.js' ],
-				dest: 'dev/app.js',
+				dest: 'dist/js/index.js',
 			},
 			css: {
-				src: [ 'src/css/**/*.cs' ],
-				dest: 'dev/app.css',
+				src: [ 'src/css/**/*.css' ],
+				dest: 'dist/css/styles.css',
 			},
 		},
 		html2js: {
@@ -59,11 +59,22 @@ module.exports = function(grunt) {
 		},
 		copy: {
 			main: {
-				expand: true,
-				src: 'src/3d-editor/**/*',
-				dest: 'dist/'
-			}
-		}
+				files: [
+					{
+						expand: true,
+						flatten: true,
+						src: 'src/3d-editor/*',
+						dest: 'dist/3d-editor/',
+					},
+					{
+						expand: true,
+						flatten: true,
+						src: 'src/3d-editor/textures/*',
+						dest: 'dist/3d-editor/textures/'
+					}
+				],
+			},
+		},
 	});
 
 	// Loading of tasks and registering tasks will be written here
