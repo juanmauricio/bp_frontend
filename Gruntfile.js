@@ -39,7 +39,6 @@ module.exports = function(grunt) {
 			},
 		},
 		clean: [ 'src/dev/' ],
-
 		homepage: {
 			template: 'src/index.html',
 			dev: {
@@ -52,7 +51,7 @@ module.exports = function(grunt) {
 			dist: {
 				dest: 'dist/index.html',
 				context: {
-					obfuscated: 'o'
+					obfuscated: 'o',
 				},
 			},
 		},
@@ -69,9 +68,24 @@ module.exports = function(grunt) {
 						expand: true,
 						flatten: true,
 						src: 'src/3d-editor/textures/*',
-						dest: 'dist/3d-editor/textures/'
-					}
+						dest: 'dist/3d-editor/textures/',
+					},
 				],
+			},
+		},
+		obfuscator: {
+			options: {
+				banner: '// obfuscated with grunt-contrib-obfuscator.\n',
+				debugProtection: true,
+				debugProtectionInterval: true,
+			},
+			task1: {
+				options: {
+					// options for each sub task
+				},
+				files: {
+					'dist/3d-editor/obpeditor.js': [ 'src/3d-editor/bpeditor.js' ],
+				},
 			},
 		},
 	});
@@ -83,10 +97,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-babel');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-obfuscator');
 
 	//load custom tasks
 	grunt.loadTasks('tasks');
 
 	//set up the workflow.
-	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js', 'copy' ]);
+	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js', 'copy', 'obfuscator' ]);
 };
