@@ -322,12 +322,14 @@ function init() {
     // console.log(container.clientWidth + "-" + container.clientHeight )
 
     // document.body.appendChild(renderer.domElement);
+    renderer.domElement.width = container.clientWidth;
+    renderer.domElement.height = container.clientHeight;
     container.appendChild(renderer.domElement);
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
-    document.addEventListener('mousedown', onDocumentMouseDown, false);
-    document.addEventListener('keydown', onDocumentKeyDown, false);
-    document.addEventListener('keyup', onDocumentKeyUp, false);
+    container.addEventListener('mousemove', onDocumentMouseMove, false);
+    container.addEventListener('mousedown', onDocumentMouseDown, false);
+    container.addEventListener('keydown', onDocumentKeyDown, false);
+    container.addEventListener('keyup', onDocumentKeyUp, false);
 
     window.addEventListener('resize', onWindowResize, false);
     window.addEventListener('scroll', onWindowScroll, false);
@@ -733,9 +735,10 @@ function onDocumentMouseDown(event) {
     event.preventDefault();
     // mouse.set((event.clientX / window.innerWidth) * 2 - 1, - (event.clientY / window.innerHeight) * 2 + 1);
 
-    // rect = container.getBoundingClientRect();
+    rect = container.getBoundingClientRect();
     topY = Number(rect.top);
     leftX = Number(rect.left);
+    // alert(topY + " " + leftX);
 
     mouse.set(((event.clientX - leftX) / container.clientWidth) * 2 - 1, - ((event.clientY - topY) / container.clientHeight) * 2 + 1);
     // alert(event.clientX + "-" + event.clientY + "**" + leftX + "-" + topY);
