@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'dist/app.js': 'dev/app.js',
+					'dist/app.js': 'src/js/index.js',
 				},
 			},
 		},
@@ -41,13 +41,6 @@ module.exports = function(grunt) {
 		clean: [ 'src/dev/' ],
 		homepage: {
 			template: 'src/index.html',
-			dev: {
-				dest: 'dev/index.html',
-				context: {
-					js: 'app.js',
-					css: 'app.css',
-				},
-			},
 			dist: {
 				dest: 'dist/index.html',
 				context: {
@@ -84,7 +77,7 @@ module.exports = function(grunt) {
 					// options for each sub task
 				},
 				files: {
-					'dist/3d-editor/obpeditor.js': [ 'src/3d-editor/bpeditor.js' ],
+					'dist/3d-editor/bpeditor.js': [ 'src/3d-editor/bpeditor.js' ],
 				},
 			},
 		},
@@ -103,5 +96,5 @@ module.exports = function(grunt) {
 	grunt.loadTasks('tasks');
 
 	//set up the workflow.
-	grunt.registerTask('default', [ 'concat', 'babel', 'uglify', 'homepage', 'html2js', 'copy', 'obfuscator' ]);
+	grunt.registerTask('default', [ 'concat', 'homepage', 'html2js', 'copy', 'obfuscator' ]);
 };
