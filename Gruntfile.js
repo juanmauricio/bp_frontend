@@ -52,8 +52,7 @@ module.exports = function(grunt) {
 			dist: {
 				dest: 'dist/index.html',
 				context: {
-					js: 'app.js',
-					css: 'app.css',
+					obfuscated: 'o'
 				},
 			},
 		},
