@@ -22,12 +22,6 @@ module.exports = function(grunt) {
 				dest: 'dist/css/styles.css',
 			},
 		},
-		html2js: {
-			dist: {
-				src: [ 'src/*.html' ],
-				dest: 'dist/html_templates.js',
-			},
-		},
 		uglify: {
 			dist: {
 				files: {
@@ -63,6 +57,12 @@ module.exports = function(grunt) {
 						src: 'src/3d-editor/textures/*',
 						dest: 'dist/3d-editor/textures/',
 					},
+					{
+						expand: true,
+						flatten: true,
+						src: 'src/lib/angular.min.js',
+						dest: 'dist/js/'
+					}
 				],
 			},
 		},
@@ -96,5 +96,5 @@ module.exports = function(grunt) {
 	grunt.loadTasks('tasks');
 
 	//set up the workflow.
-	grunt.registerTask('default', [ 'concat', 'homepage', 'html2js', 'copy', 'obfuscator' ]);
+	grunt.registerTask('default', [ 'concat', 'homepage', 'copy', 'obfuscator' ]);
 };

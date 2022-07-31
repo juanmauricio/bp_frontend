@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./js/angular.min.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./3d-editor/three.min.js"></script>
     <script type="text/javascript" src="./3d-editor/OrbitControls.js"></script>
@@ -17,9 +17,8 @@
 </head>
 
 <body ng-app="app">
-    <p class="name">Name : <input type="text" ng-model="name"></p>
-    <h1>Hello {{name}}</h1>
-    <div id="editorContainer" style="max-width: 650px;">
+    <h1 ng-controller="main">{{name}} Empieza a diseñar tu mueble! </h1>
+    <div id="editorContainer" width="650px" height="650px" style="width: 650px; height: 650px;">
     </div>
     <script type="text/javascript">
         startDFEditor();
