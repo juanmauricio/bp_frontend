@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="./js/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/angular.min.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./3d-editor/three.min.js"></script>
     <script type="text/javascript" src="./3d-editor/OrbitControls.js"></script>
@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
-<body ng-app="app">
-    <h1 ng-controller="main">{{name}} Empieza a diseñar tu mueble! </h1>
+<body ng-app="app" ng-controller="main">
+    <h1 >Empieza a diseñar tu mueble! </h1>
+    <h3>{{name}}</h3>
     <div id="editorContainer" width="650px" height="650px" style="width: 650px; height: 650px;">
     </div>
     <script type="text/javascript">

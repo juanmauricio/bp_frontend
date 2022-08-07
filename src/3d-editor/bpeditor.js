@@ -179,7 +179,7 @@ function init() {
     // camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
     camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 1, 10000);
 
-    orbitControls = new THREE.OrbitControls(camera);
+    orbitControls = new THREE.OrbitControls(camera, document.getElementById("editorContainer"));
     orbitControls.userZoom = false;
     orbitControls.userRotate = true;
     orbitControls.userPan = true;
