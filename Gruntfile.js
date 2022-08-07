@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						flatten: true,
-						src: 'src/lib/angular.min.js',
+						src: 'src/js/angular.min.js',
 						dest: 'dist/js/'
 					}
 				],

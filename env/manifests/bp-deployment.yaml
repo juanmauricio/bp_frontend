@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bp-frontend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bp-frontend
+  template:
+    metadata:
+      labels:
+        app: bp-frontend
+    spec:
+      containers:
+        - name: bp-frontend
+          image: 811771644622.dkr.ecr.us-east-1.amazonaws.com/bp-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
